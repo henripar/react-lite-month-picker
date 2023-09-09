@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.month:hover {
+  border-radius: 7px;
+  background-color: rgb(244, 244, 244);
+}
+
+.month {
+  padding: 1rem;
+  border: solid 1px transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  border-radius: 7px;
+  background: var(--month-active-bg-color) !important;
+}
+
+.yearContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.monthsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.pickerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 7px;
+  border: 1px solid rgb(229, 229, 229);
+  position: absolute;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.bold1 {
+  font-size: 1.4rem;
+}
+
+::selection {
+  background-color: transparent;
+}
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  --month-active-bg-color: rgba(78, 163, 152, 0.242);
+}
