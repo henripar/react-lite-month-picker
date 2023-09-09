@@ -16,9 +16,21 @@ export function MonthPicker(props) {
   };
 
   useEffect(() => {
+    const r = document.querySelector(':root');
     if (props.bgColorMonthActive) {
-      const r = document.querySelector(':root');
       setActiveMonthBgColor(r, props.bgColorMonthActive);
+    }
+    if (props.bgColorMonthHover) {
+      r.style.setProperty('--month-hover-bg-color', props.bgColorMonthHover);
+    }
+    if (props.borderRadiusMonth) {
+      r.style.setProperty('--month-border-radius', props.borderRadiusMonth);
+    }
+    if (props.bgColorPicker) {
+      r.style.setProperty('--picker-bg-color', props.bgColorPicker);
+    }
+    if (props.textColor) {
+      r.style.setProperty('--text-color', props.textColor);
     }
   }, []);
 

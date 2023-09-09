@@ -6,6 +6,8 @@ Simple, modern and customizable month picker component for ReactJS.
 
 ## Installation
 
+Using npm:
+
 ```bash
 npm install react-lite-month-picker --save
 ```
@@ -50,3 +52,15 @@ const Example = () => {
 
 export default Example;
 ```
+
+## Customization
+
+You can customize the component styles by passing props to it.
+
+| Prop name            | Description                                   | Default value |
+| -------------------- | --------------------------------------------- | ------------- |
+| `bgColorMonthActive` | Background color of the active month.         | `#4ea3983e`   |
+| `bgColorMonthHover`  | Background color of the month on mouse hover. | `#f4f4f4`     |
+| `borderRadiusMonth`  | Border radius of the moth element.            | `7px`         |
+| `bgColorPicker `     | Background color of the picker element.       | `#fff`        |
+| `textColor`          | Color of the text.                            | `#000`        |
