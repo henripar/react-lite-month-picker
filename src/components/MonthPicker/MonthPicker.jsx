@@ -11,27 +11,17 @@ export function MonthPicker(props) {
     props.selectedYear ?? new Date().getFullYear()
   );
 
-  var r = document.querySelector(':root');
-
-  // Create a function for getting a variable value
-  function myFunction_get(r) {
-    // Get the styles (properties and values) for the root
-    var rs = getComputedStyle(r);
-    // Alert the value of the --blue variable
-    alert('The value of --blue is: ' + rs.getPropertyValue('--blue'));
-  }
-
-  // Create a function for setting a variable value
-  function setActiveMonthBgColor(r, color) {
-    // Set the value of variable --blue to another value (in this case "lightblue")
+  const setActiveMonthBgColor = (r, color) => {
     r.style.setProperty('--month-active-bg-color', color);
-  }
+  };
 
   useEffect(() => {
     if (props.bgColorMonthActive) {
+      const r = document.querySelector(':root');
       setActiveMonthBgColor(r, props.bgColorMonthActive);
     }
   }, []);
+
   const changeYear = (year) => {
     setYear(year);
   };
@@ -51,6 +41,7 @@ export function MonthPicker(props) {
       }),
     });
   };
+
   return (
     <div className={styles.pickerContainer}>
       <div className={styles.yearContainer}>
