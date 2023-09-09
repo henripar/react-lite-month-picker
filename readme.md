@@ -2,6 +2,8 @@
 
 Simple, modern and customizable month picker component for ReactJS.
 
+![React Lite Month Picker](./src/assets/cover.png)
+
 # Installation
 
 ```bash
