@@ -16,39 +16,34 @@ npm install react-lite-month-picker --save
 
 ```jsx
 import { useState } from 'react';
-import { MonthPicker } from 'react-lite-month-picker';
+import { MonthPicker, MonthInput } from 'react-lite-month-picker';
 
-const Example = () => {
-  const [year, setYear] = useState(2023);
-  const [selectionData, setSelectionData] = useState({});
-  const [pickerIsOpen, setPickerIsOpen] = useState(false);
+function Example() {
+  const [selecedMonthData, setSelectedMonthData] = useState({
+    month: 9,
+    year: 2023,
+  });
+  const [isPickerOpen, setIsPickerOpen] = useState(false);
 
   return (
     <>
-      <div
-        className='selectedMonth'
-        onClick={(e) => setPickerIsOpen(!pickerIsOpen)}
-      >
-        <div className='monthName'>
-          {selectionData.monthName} {year}
-        </div>
-      </div>
-      {pickerIsOpen && (
-        <MonthPicker
-          setSelectedYear={setYear}
-          selectedYear={year}
-          selectedMonth={
-            selectionData.month
-              ? selectionData.month - 1
-              : new Date().getMonth()
-          }
-          setIsOpen={setPickerIsOpen}
-          setMonthSelected={setSelectionData}
+      <div>
+        <MonthInput
+          selected={selecedMonthData}
+          setShowMonthPicker={setIsPickerOpen}
+          showMonthPicker={isPickerOpen}
         />
-      )}
+        {isPickerOpen ? (
+          <MonthPicker
+            setIsOpen={setIsPickerOpen}
+            selected={selecedMonthData}
+            onChange={setSelectedMonthData}
+          ></MonthPicker>
+        ) : null}
+      </div>
     </>
   );
-};
+}
 
 export default Example;
 ```

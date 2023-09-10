@@ -5,10 +5,10 @@ import styles from './MonthPicker.module.css';
 
 export function MonthPicker(props) {
   const [month, setMonth] = useState(
-    props.selectedMonth ?? new Date().getMonth()
+    props.selected.month ? props.selected.month - 1 : new Date().getMonth()
   );
   const [year, setYear] = useState(
-    props.selectedYear ?? new Date().getFullYear()
+    props.selected.year ?? new Date().getFullYear()
   );
 
   const setActiveMonthBgColor = (r, color) => {
@@ -40,9 +40,8 @@ export function MonthPicker(props) {
 
   const changeMonth = (month) => {
     setMonth(month);
-    props.setSelectedYear(year);
     props.setIsOpen(false);
-    props.setMonthSelected({
+    props.onChange({
       month: month + 1,
       year: year,
       monthName: new Date(year, month).toLocaleString('default', {
@@ -68,7 +67,7 @@ export function MonthPicker(props) {
       <div className={styles.monthsContainer}>
         <div
           className={`${styles.month} ${
-            month == 0 && props.selectedYear == year ? styles.active : null
+            month == 0 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(0)}
         >
@@ -76,7 +75,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 1 && props.selectedYear == year ? styles.active : null
+            month == 1 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(1)}
         >
@@ -84,7 +83,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 2 && props.selectedYear == year ? styles.active : null
+            month == 2 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(2)}
         >
@@ -92,7 +91,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 3 && props.selectedYear == year ? styles.active : null
+            month == 3 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(3)}
         >
@@ -100,7 +99,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 4 && props.selectedYear == year ? styles.active : null
+            month == 4 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(4)}
         >
@@ -108,7 +107,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 5 && props.selectedYear == year ? styles.active : null
+            month == 5 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(5)}
         >
@@ -116,7 +115,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 6 && props.selectedYear == year ? styles.active : null
+            month == 6 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(6)}
         >
@@ -124,7 +123,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 7 && props.selectedYear == year ? styles.active : null
+            month == 7 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(7)}
         >
@@ -132,7 +131,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 8 && props.selectedYear == year ? styles.active : null
+            month == 8 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(8)}
         >
@@ -140,7 +139,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 9 && props.selectedYear == year ? styles.active : null
+            month == 9 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(9)}
         >
@@ -148,7 +147,7 @@ export function MonthPicker(props) {
         </div>
         <div
           className={`${styles.month} ${
-            month == 10 && props.selectedYear == year ? styles.active : null
+            month == 10 && props.selected.year == year ? styles.active : null
           }`}
           onClick={(e) => changeMonth(10)}
         >
