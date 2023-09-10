@@ -1,8 +1,11 @@
 # React Lite Month Picker
 
+![https://img.shields.io/npm/dw/react-lite-month-picker](https://img.shields.io/npm/dw/react-lite-month-picker) ![npm](https://img.shields.io/npm/v/react-lite-month-picker) ![GitHub top language](https://img.shields.io/github/languages/top/henripar/react-lite-month-picker)  ![GitHub](https://img.shields.io/github/license/henripar/react-lite-month-picker)
+
 Simple, modern and customizable month picker component for ReactJS.
 
 ![React Lite Month Picker](./src/assets/header-cover.png)
+
 
 ## Installation
 
