@@ -38,7 +38,7 @@ function Example() {
             setIsOpen={setIsPickerOpen}
             selected={selecedMonthData}
             onChange={setSelectedMonthData}
-          ></MonthPicker>
+          />
         ) : null}
       </div>
     </>
