@@ -57,7 +57,7 @@ button {
   font-size: 1.4rem;
 }
 
-::selection {
+.pickerContainer::selection {
   background-color: transparent;
 }
 

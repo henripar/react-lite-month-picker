@@ -57,11 +57,11 @@ export function MonthPicker(props) {
     <div className={styles.pickerContainer}>
       <div className={styles.yearContainer}>
         <button onClick={(e) => changeYear(year - 1)}>
-          <ChevronLeft />
+          <ChevronLeft color={props.textColor ? props.textColor : '#000'} />
         </button>
         <span className={styles.bold1}>{year}</span>
         <button onClick={(e) => changeYear(year + 1)}>
-          <ChevronRight />
+          <ChevronRight color={props.textColor ? props.textColor : '#000'} />
         </button>
       </div>
       <div className={styles.monthsContainer}>

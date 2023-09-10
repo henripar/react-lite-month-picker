@@ -9,6 +9,17 @@
   padding: 1rem;
   border-radius: 5px;
   border: 1px solid #0000005b;
-  background: #fff;
+  background: var(--input-bg-color);
+  color: var(--input-text-color);
   margin-bottom: 1rem;
+}
+
+.monthInputField:hover {
+  background: var(--input-hover-bg-color);
+}
+
+:root {
+  --input-bg-color: #fff;
+  --input-hover-bg-color: #fff;
+  --input-text-color: #000;
 }

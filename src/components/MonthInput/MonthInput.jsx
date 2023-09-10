@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import styles from './MonthInput.module.css';
 
@@ -31,6 +31,19 @@ export function MonthInput(props) {
         return 'December';
     }
   };
+
+  useEffect(() => {
+    const r = document.querySelector(':root');
+    if (props.bgColor) {
+      r.style.setProperty('--input-bg-color', props.bgColor);
+    }
+    if (props.bgColorHover) {
+      r.style.setProperty('--input-hover-bg-color', props.bgColorHover);
+    }
+    if (props.textColor) {
+      r.style.setProperty('--input-text-color', props.textColor);
+    }
+  }, []);
 
   return (
     <span

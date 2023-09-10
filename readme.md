@@ -48,9 +48,24 @@ function Example() {
 export default Example;
 ```
 
+### Selected month data
+
+Currently selected month data is an object with the following structure:
+
+```js
+{
+  month: 9,
+  year: 2023,
+  monthName: 'September',
+  monthShort: 'Sep'
+}
+```
+
+It will get saved on set parent component state with `onChange` event.
+
 ## Customization
 
-You can customize the component styles by passing props to it.
+You can customize the `MonthPicker` component styles by passing props to it.
 
 | Prop name            | Description                                   | Default value |
 | -------------------- | --------------------------------------------- | ------------- |
@@ -59,3 +74,13 @@ You can customize the component styles by passing props to it.
 | `borderRadiusMonth`  | Border radius of the moth element.            | `7px`         |
 | `bgColorPicker `     | Background color of the picker element.       | `#fff`        |
 | `textColor`          | Color of the text.                            | `#000`        |
+
+\
+\
+You can customize the `MonthInput` component styles by passing props to it.
+
+| Prop name      | Description                                           | Default value |
+| -------------- | ----------------------------------------------------- | ------------- |
+| `bgColor`      | Background color of the input element.                | `#fff`        |
+| `bgColorHover` | Background color of the input element on mouse hover. | `#fff`        |
+| `textColor`    | Color of the text.                                    | `#000`        |
