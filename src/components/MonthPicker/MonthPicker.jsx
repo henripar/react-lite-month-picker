@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './MonthPicker.module.css';
 
 export function MonthPicker(props) {
@@ -83,13 +82,39 @@ export function MonthPicker(props) {
           aria-label='Previous Year'
           onClick={(e) => changeYear(year - 1)}
         >
-          <ChevronLeft color={props.textColor ? props.textColor : '#000'} />
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke={props.textColor ? props.textColor : '#000'}
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            class='lucide lucide-chevron-left'
+          >
+            <path d='m15 18-6-6 6-6' />
+          </svg>
         </button>
         <span aria-description='Year selected' className={styles.bold1}>
           {year}
         </span>
         <button aria-label='Next Year' onClick={(e) => changeYear(year + 1)}>
-          <ChevronRight color={props.textColor ? props.textColor : '#000'} />
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke={props.textColor ? props.textColor : '#000'}
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            class='lucide lucide-chevron-right'
+          >
+            <path d='m9 18 6-6-6-6' />
+          </svg>
         </button>
       </div>
       <div className={styles.monthsContainer}>
