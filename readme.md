@@ -6,12 +6,33 @@ Simple, modern and customizable month picker component for ReactJS.
 
 ![React Lite Month Picker](https://www.react-lite-month-picker.dev/header-cover.png)
 
+## Features
+
+- **Simple and easy to use.**
+- **Tiny**: Minzipped size less than 1kB.
+- **Highly customizable**: Easily make it fit to your designs.
+- **Accessible**: Fully accessible with keyboard navigation and meets the WCAG 2.1 accesibility guidelines.
+- **41 languages** supported.
+- **0 Dependencies**: No surprise dependencies included.
+
 ## Installation
 
 Using npm:
 
 ```bash
 npm install react-lite-month-picker --save
+```
+
+Using yarn:
+
+```bash
+yarn add react-lite-month-picker
+```
+
+Using bun:
+
+```bash
+bun install react-lite-month-picker
 ```
 
 ## Usage
@@ -69,13 +90,15 @@ It will get saved on set parent component state with `onChange` event.
 
 You can customize the `MonthPicker` component styles by passing props to it.
 
-| Prop name            | Description                                   | Default value |
-| -------------------- | --------------------------------------------- | ------------- |
-| `bgColorMonthActive` | Background color of the active month.         | `#4ea3983e`   |
-| `bgColorMonthHover`  | Background color of the month on mouse hover. | `#f4f4f4`     |
-| `borderRadiusMonth`  | Border radius of the moth element.            | `7px`         |
-| `bgColorPicker `     | Background color of the picker element.       | `#fff`        |
-| `textColor`          | Color of the text.                            | `#000`        |
+| Prop name            | Description                                        | Default value |
+| -------------------- | -------------------------------------------------- | ------------- |
+| `bgColorMonthActive` | Background color of the active month.              | `#4ea3983e`   |
+| `bgColorMonthHover`  | Background color of the month on mouse hover.      | `#f4f4f4`     |
+| `borderRadiusMonth`  | Border radius of the moth element.                 | `7px`         |
+| `bgColorPicker `     | Background color of the picker element.            | `#fff`        |
+| `textColor`          | Color of the text.                                 | `#000`        |
+| `size`               | Size of the component. Accepts 'small' or 'large'. | `large`       |
+| `lang`               | Language. Accepts ISO 639-1 language code.         | `en`          |
 
 \
 \
@@ -86,3 +109,5 @@ You can customize the `MonthInput` component styles by passing props to it.
 | `bgColor`      | Background color of the input element.                | `#fff`        |
 | `bgColorHover` | Background color of the input element on mouse hover. | `#fff`        |
 | `textColor`    | Color of the text.                                    | `#000`        |
+| `size`         | Size of the component. Accepts 'small' or 'large'.    | `large`       |
+| `lang`         | Language. Accepts ISO 639-1 language code.            | `en`          |

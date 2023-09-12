@@ -6,12 +6,13 @@
 }
 
 .month {
-  padding: 1rem;
+  padding: var(--month-select-padding);
   border: solid 1px transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .active {
@@ -24,6 +25,7 @@
   align-items: center;
   justify-content: space-evenly;
   margin-bottom: 1rem;
+  margin-top: var(--year-display-margin-top);
   width: 60%;
 }
 
@@ -38,7 +40,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--picker-padding);
   border-radius: 7px;
   border: 1px solid rgb(0 0 0 / 35%);
   color: var(--text-color);
@@ -51,7 +53,6 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  outline: none;
 }
 .bold1 {
   font-size: 1.4rem;
@@ -68,4 +69,7 @@ button {
   --text-color: #000;
   --month-border-radius: 7px;
   --picker-bg-color: #fff;
+  --picker-padding: 2rem;
+  --year-display-margin-top: 0;
+  --month-select-padding: 1rem;
 }

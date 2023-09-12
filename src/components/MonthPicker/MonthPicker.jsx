@@ -32,10 +32,27 @@ export function MonthPicker(props) {
     if (props.textColor) {
       r.style.setProperty('--text-color', props.textColor);
     }
+    if (props.size == 'small') {
+      r.style.setProperty('--picker-padding', '1rem');
+      r.style.setProperty('--year-display-margin-top', '1rem');
+      r.style.setProperty('--month-select-padding', '0.5rem');
+    }
   }, []);
 
   const changeYear = (year) => {
     setYear(year);
+  };
+
+  const getMonthNames = (locale = 'en', format = 'short') => {
+    const formatter = new Intl.DateTimeFormat(locale, {
+      month: format,
+      timeZone: 'UTC',
+    });
+    const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((month) => {
+      const mm = month < 10 ? `0${month}` : month;
+      return new Date(`2023-${mm}-01T00:00:00+00:00`);
+    });
+    return months.map((date) => formatter.format(date));
   };
 
   const changeMonth = (month) => {
@@ -44,123 +61,53 @@ export function MonthPicker(props) {
     props.onChange({
       month: month + 1,
       year: year,
-      monthName: new Date(year, month).toLocaleString('default', {
-        month: 'long',
-      }),
-      monthShortName: new Date(year, month).toLocaleString('default', {
-        month: 'short',
-      }),
+      monthName: new Date(year, month).toLocaleString(
+        props.lang ? props.lang : 'default',
+        {
+          month: 'long',
+        }
+      ),
+      monthShortName: new Date(year, month).toLocaleString(
+        props.lang ? props.lang : 'default',
+        {
+          month: 'short',
+        }
+      ),
     });
   };
 
   return (
     <div className={styles.pickerContainer}>
       <div className={styles.yearContainer}>
-        <button onClick={(e) => changeYear(year - 1)}>
+        <button
+          aria-label='Previous Year'
+          onClick={(e) => changeYear(year - 1)}
+        >
           <ChevronLeft color={props.textColor ? props.textColor : '#000'} />
         </button>
-        <span className={styles.bold1}>{year}</span>
-        <button onClick={(e) => changeYear(year + 1)}>
+        <span aria-description='Year selected' className={styles.bold1}>
+          {year}
+        </span>
+        <button aria-label='Next Year' onClick={(e) => changeYear(year + 1)}>
           <ChevronRight color={props.textColor ? props.textColor : '#000'} />
         </button>
       </div>
       <div className={styles.monthsContainer}>
-        <div
-          className={`${styles.month} ${
-            month == 0 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(0)}
-        >
-          Jan
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 1 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(1)}
-        >
-          Feb
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 2 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(2)}
-        >
-          Mar
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 3 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(3)}
-        >
-          Apr
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 4 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(4)}
-        >
-          May
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 5 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(5)}
-        >
-          Jun
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 6 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(6)}
-        >
-          Jul
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 7 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(7)}
-        >
-          Aug
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 8 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(8)}
-        >
-          Sep
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 9 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(9)}
-        >
-          Oct
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 10 && props.selected.year == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(10)}
-        >
-          Nov
-        </div>
-        <div
-          className={`${styles.month} ${
-            month == 11 && props.selectedYear == year ? styles.active : null
-          }`}
-          onClick={(e) => changeMonth(11)}
-        >
-          Dec
-        </div>
+        {getMonthNames(props.lang).map((monthName, index) => {
+          return (
+            <button
+              key={index}
+              className={`${styles.month} ${
+                index == month && props.selected.year == year
+                  ? styles.active
+                  : null
+              }`}
+              onClick={(e) => changeMonth(index)}
+            >
+              {monthName}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

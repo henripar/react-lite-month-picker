@@ -1,7 +1,8 @@
 .monthInputField {
-  width: 290px;
+  width: 100%;
+  min-width: 200px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: var(--month-input-font-size);
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -22,4 +23,5 @@
   --input-bg-color: #fff;
   --input-hover-bg-color: #fff;
   --input-text-color: #000;
+  --month-input-font-size: 1.5rem;
 }

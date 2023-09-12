@@ -1,2 +1,2 @@
-export { MonthPicker } from './components/MonthPicker/MonthPicker';
-export { MonthInput } from './components/MonthInput/MonthInput';
+export { MonthPicker } from './components/MonthPicker/MonthPicker.jsx';
+export { MonthInput } from './components/MonthInput/MonthInput.jsx';
