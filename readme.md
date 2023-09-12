@@ -17,19 +17,19 @@ Simple, modern and customizable month picker component for ReactJS.
 
 ## Installation
 
-Using npm:
+**Using npm:**
 
 ```bash
 npm install react-lite-month-picker --save
 ```
 
-Using yarn:
+**Using yarn:**
 
 ```bash
 yarn add react-lite-month-picker
 ```
 
-Using bun:
+**Using bun:**
 
 ```bash
 bun install react-lite-month-picker
