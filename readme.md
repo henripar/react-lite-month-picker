@@ -8,12 +8,12 @@ Simple, modern and customizable month picker component for ReactJS.
 
 ## Features
 
-- **Simple and easy to use.**
-- **Tiny**: Minzipped size less than 1kB.
-- **Highly customizable**: Easily make it fit to your designs.
-- **Accessible**: Fully accessible with keyboard navigation and meets the WCAG 2.1 accesibility guidelines.
-- **41 languages** supported.
-- **0 Dependencies**: No surprise dependencies included.
+&#128512; **Simple and easy to use.**  
+&#127798; **Tiny**: Minzipped size less than 1kB.  
+&#129473; **Highly customizable**: Easily make it fit to your designs.  
+&#128197; **Accessible**: Fully accessible with keyboard navigation. Developed according the WCAG 2.1 accesibility guidelines.  
+🇫🇮 **41 languages** supported.  
+&#128683; **0 Dependencies**: No surprise dependencies included.
 
 ## Installation
 
