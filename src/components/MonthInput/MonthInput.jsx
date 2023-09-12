@@ -16,6 +16,8 @@ export function MonthInput(props) {
     }
     if (props.size == 'small') {
       r.style.setProperty('--month-input-font-size', '16px');
+      r.style.setProperty('--month-input-width', '200px');
+      r.style.setProperty('--month-input-padding', '0.5rem');
     }
   }, []);
 

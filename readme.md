@@ -111,3 +111,9 @@ You can customize the `MonthInput` component styles by passing props to it.
 | `textColor`    | Color of the text.                                    | `#000`        |
 | `size`         | Size of the component. Accepts 'small' or 'large'.    | `large`       |
 | `lang`         | Language. Accepts ISO 639-1 language code.            | `en`          |
+
+See full list of supported languages on the [website](https://www.react-lite-month-picker.dev/).
+
+## License
+
+MIT © [henripar](https://github.com/henripar)
