@@ -1,6 +1,6 @@
 {
   "name": "react-lite-month-picker",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "description": "Simple, modern and customizable month picker component for ReactJS.",
   "main": "src/index.js",
   "scripts": {

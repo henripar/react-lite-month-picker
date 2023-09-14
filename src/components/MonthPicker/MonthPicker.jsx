@@ -90,9 +90,9 @@ export function MonthPicker(props) {
             viewBox='0 0 24 24'
             fill='none'
             stroke={props.textColor ? props.textColor : '#000'}
-            stroke-width='2'
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
             class='lucide lucide-chevron-left'
           >
             <path d='m15 18-6-6 6-6' />
@@ -109,10 +109,10 @@ export function MonthPicker(props) {
             viewBox='0 0 24 24'
             fill='none'
             stroke={props.textColor ? props.textColor : '#000'}
-            stroke-width='2'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            class='lucide lucide-chevron-right'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            className='lucide lucide-chevron-right'
           >
             <path d='m9 18 6-6-6-6' />
           </svg>
