@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 1rem;
+  margin-bottom: var(--year-display-margin-bottom);
   margin-top: var(--year-display-margin-top);
   width: 60%;
 }
@@ -73,5 +73,6 @@ button {
   --picker-bg-color: #fff;
   --picker-padding: 2rem;
   --year-display-margin-top: 0;
+  --year-display-margin-bottom: 1rem;
   --month-select-padding: 1rem;
 }

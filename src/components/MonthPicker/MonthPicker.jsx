@@ -33,7 +33,8 @@ export function MonthPicker(props) {
     }
     if (props.size == 'small') {
       r.style.setProperty('--picker-padding', '1rem');
-      r.style.setProperty('--year-display-margin-top', '1rem');
+      r.style.setProperty('--year-display-margin-top', '0.5rem');
+      r.style.setProperty('--year-display-margin-bottom', '0.5rem');
       r.style.setProperty('--month-select-padding', '0.5rem');
     }
   }, []);
@@ -61,13 +62,13 @@ export function MonthPicker(props) {
       month: month + 1,
       year: year,
       monthName: new Date(year, month).toLocaleString(
-        props.lang ? props.lang : 'default',
+        props.lang ? props.lang : 'en',
         {
           month: 'long',
         }
       ),
       monthShortName: new Date(year, month).toLocaleString(
-        props.lang ? props.lang : 'default',
+        props.lang ? props.lang : 'en',
         {
           month: 'short',
         }
